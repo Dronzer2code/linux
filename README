@@ -1,218 +1,55 @@
-<div align="center">
-  <svg width="820" height="200" viewBox="0 0 820 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroTitle heroSubtitle">
-    <defs>
-      <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#111827"/>
-        <stop offset="45%" stop-color="#006699"/>
-        <stop offset="100%" stop-color="#00A676"/>
-      </linearGradient>
-      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#00A676" stop-opacity="0.9"/>
-        <stop offset="100%" stop-color="#00A676" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect x="10" y="10" width="800" height="180" rx="28" fill="url(#heroGradient)" opacity="0.18"/>
-    <g transform="translate(60,54)">
-      <text id="heroTitle" x="0" y="0" font-size="46" font-weight="700" fill="#111827">The Linux Kernel</text>
-      <text id="heroSubtitle" x="0" y="44" font-size="20" fill="#1F2937">Fast, secure, collaborative engineering since 1991</text>
-    </g>
-    <g transform="translate(540,36)">
-      <circle cx="60" cy="60" r="56" fill="#111827" opacity="0.3"/>
-      <circle cx="60" cy="60" r="46" fill="#F9FAFB"/>
-      <path d="M40 55 c0-12 9-21 20-21s20 9 20 21c0 12-9 21-20 21s-20-9-20-21z" fill="#006699"/>
-      <path d="M30 86 c0-14 18-24 30-24s30 10 30 24v8H30z" fill="#00A676"/>
-      <circle cx="28" cy="36" r="6" fill="url(#nodeGlow)"/>
-      <circle cx="92" cy="40" r="6" fill="url(#nodeGlow)"/>
-      <line x1="28" y1="36" x2="60" y2="60" stroke="#00A676" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
-      <line x1="92" y1="40" x2="60" y2="60" stroke="#00A676" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
-    </g>
-  </svg>
-</div>
-
-<div align="center">
-  <svg width="640" height="120" viewBox="0 0 640 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="badgeRepo badgeDocs badgeMail">
-    <g transform="translate(20,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeRepo" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Canonical Repo</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">git.kernel.org</text>
-    </g>
-    <g transform="translate(230,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeDocs" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Documentation</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">docs.kernel.org</text>
-    </g>
-    <g transform="translate(440,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeMail" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Patchwork &amp; ML</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">lore.kernel.org</text>
-    </g>
-  </svg>
-</div>
-
----
-
-## 🌐 Overview
-
-Linux powers everything from smartphones and IoT nodes to hyperscale clusters and the world’s fastest supercomputers. The mainline kernel, maintained by Linus Torvalds and thousands of contributors, evolves on a fast, transparent cadence while preserving decade-long ABI stability.
-
-- **Primary branches:** `master` (development), `linux-6.y` (stable), `linux-next` (integration).
-- **Release cadence:** Major releases every 8–10 weeks; stable updates weekly.
-- **Contribution model:** Review-driven patch series via mailing lists and subsystem maintainers.
-
-## 🔩 Kernel Architecture at a Glance
-
-<div align="center">
-  <svg width="760" height="240" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture">
-    <title id="architecture">Linux kernel architectural layers</title>
-    <defs>
-      <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#00A676"/>
-        <stop offset="100%" stop-color="#FFD000"/>
-      </linearGradient>
-+    </defs>
-+    <rect x="20" y="20" width="720" height="200" rx="28" fill="url(#archGradient)" opacity="0.12"/>
-+    <g transform="translate(60,60)">
-+      <rect width="180" height="70" rx="16" fill="#111827" opacity="0.85"/>
-+      <text x="90" y="32" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">User Space</text>
-+      <text x="90" y="52" text-anchor="middle" fill="#9CA3AF" font-size="12">Processes · Libraries · Shells</text>
-+    </g>
-+    <g transform="translate(290,60)">
-+      <rect width="180" height="70" rx="16" fill="#006699" opacity="0.9"/>
-+      <text x="90" y="32" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">System Calls</text>
-+      <text x="90" y="52" text-anchor="middle" fill="#D1D5DB" font-size="12">ABI · Glibc · VDSO</text>
-+    </g>
-+    <g transform="translate(520,60)">
-+      <rect width="180" height="70" rx="16" fill="#FFD000" opacity="0.95"/>
-+      <text x="90" y="32" text-anchor="middle" fill="#111827" font-size="18" font-weight="600">Kernel Space</text>
-+      <text x="90" y="52" text-anchor="middle" fill="#374151" font-size="12">Scheduler · MM · VFS</text>
-+    </g>
-+    <path d="M240 95 H290" stroke="#111827" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-+    <path d="M470 95 H520" stroke="#111827" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-+    <g transform="translate(120,150)">
-+      <rect width="520" height="50" rx="16" fill="#006699" opacity="0.16"/>
-+      <text x="260" y="30" text-anchor="middle" fill="#1F2937" font-size="13">Drivers · Filesystems · Networking · Security · BPF · Architectures · Tooling</text>
-+    </g>
-+    <defs>
-+      <marker id="arrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-+        <path d="M0 0 L10 5 L0 10 z" fill="#111827"/>
-+      </marker>
-+    </defs>
-+  </svg>
-+</div>
-+
-+## 🚀 Building from Source
-+
-+```bash
-+# Install tooling (Debian/Ubuntu example)
-sudo apt update
-+sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev dwarves bc
-+
-+# Clone the canonical tree
 # Linux Kernel: Engineering the Core of Computing
 
-<div align="center">
-  <svg width="820" height="200" viewBox="0 0 820 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroTitle heroSubtitle">
-    <defs>
-      <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#111827"/>
-        <stop offset="45%" stop-color="#006699"/>
-        <stop offset="100%" stop-color="#00A676"/>
-      </linearGradient>
-      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#00A676" stop-opacity="0.9"/>
-        <stop offset="100%" stop-color="#00A676" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect x="10" y="10" width="800" height="180" rx="28" fill="url(#heroGradient)" opacity="0.18"/>
-    <g transform="translate(60,54)">
-      <text id="heroTitle" x="0" y="0" font-size="46" font-weight="700" fill="#111827">The Linux Kernel</text>
-      <text id="heroSubtitle" x="0" y="44" font-size="20" fill="#1F2937">Fast, secure, collaborative engineering since 1991</text>
-    </g>
-    <g transform="translate(540,36)">
-      <circle cx="60" cy="60" r="56" fill="#111827" opacity="0.3"/>
-      <circle cx="60" cy="60" r="46" fill="#F9FAFB"/>
-      <path d="M40 55 c0-12 9-21 20-21s20 9 20 21c0 12-9 21-20 21s-20-9-20-21z" fill="#006699"/>
-      <path d="M30 86 c0-14 18-24 30-24s30 10 30 24v8H30z" fill="#00A676"/>
-      <circle cx="28" cy="36" r="6" fill="url(#nodeGlow)"/>
-      <circle cx="92" cy="40" r="6" fill="url(#nodeGlow)"/>
-      <line x1="28" y1="36" x2="60" y2="60" stroke="#00A676" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
-      <line x1="92" y1="40" x2="60" y2="60" stroke="#00A676" stroke-width="2" stroke-dasharray="4 4" opacity="0.7"/>
-    </g>
-  </svg>
-</div>
+> Fast, secure, collaborative engineering since 1991.
 
-<div align="center">
-  <svg width="640" height="120" viewBox="0 0 640 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="badgeRepo badgeDocs badgeMail">
-    <g transform="translate(20,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeRepo" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Canonical Repo</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">git.kernel.org</text>
-    </g>
-    <g transform="translate(230,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeDocs" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Documentation</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">docs.kernel.org</text>
-    </g>
-    <g transform="translate(440,20)">
-      <rect width="180" height="80" rx="18" fill="#111827" opacity="0.85"/>
-      <text id="badgeMail" x="90" y="36" text-anchor="middle" fill="#F9FAFB" font-size="16" font-weight="600">Patchwork &amp; ML</text>
-      <text x="90" y="58" text-anchor="middle" fill="#00A676" font-size="13">lore.kernel.org</text>
-    </g>
-  </svg>
-</div>
+## Table of Contents
+
+- [Key Links](#key-links)
+- [Overview](#overview)
+- [Kernel Architecture](#kernel-architecture)
+- [Building from Source](#building-from-source)
+- [Contributor Workflow](#contributor-workflow)
+- [Directory Cheat Sheet](#directory-cheat-sheet)
+- [Testing Matrix](#testing-matrix)
+- [Community Resources](#community-resources)
+- [Philosophy](#philosophy)
+
+## Key Links
+
+| Resource | Link | Notes |
+| --- | --- | --- |
+| Canonical repository | [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) | Mainline source maintained by Linus Torvalds |
+| Documentation hub | [docs.kernel.org](https://docs.kernel.org/) | In-tree manuals, guides, and process docs |
+| Mailing list archive | [lore.kernel.org](https://lore.kernel.org/) | Review threads, patch discussions, subsystem traffic |
 
 ---
 
-## 🌐 Overview
+## Overview
 
-Linux powers everything from smartphones and IoT nodes to hyperscale clusters and the world’s fastest supercomputers. The mainline kernel, maintained by Linus Torvalds and thousands of contributors, evolves on a fast, transparent cadence while preserving decade-long ABI stability.
+Linux powers everything from smartphones and IoT nodes to hyperscale clusters and the world’s fastest supercomputers. The mainline kernel evolves on a transparent cadence while preserving multi-decade ABI stability.
 
 - **Primary branches:** `master` (development), `linux-6.y` (stable), `linux-next` (integration).
 - **Release cadence:** Major releases every 8–10 weeks; stable updates weekly.
-- **Contribution model:** Review-driven patch series via mailing lists and subsystem maintainers.
+- **Governance:** Review-driven patch series coordinated by subsystem maintainers via mailing lists.
 
-## 🔩 Kernel Architecture at a Glance
+## Kernel Architecture
 
-<div align="center">
-  <svg width="760" height="240" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture">
-    <title id="architecture">Linux kernel architectural layers</title>
-    <defs>
-      <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#00A676"/>
-        <stop offset="100%" stop-color="#FFD000"/>
-      </linearGradient>
-    </defs>
-    <rect x="20" y="20" width="720" height="200" rx="28" fill="url(#archGradient)" opacity="0.12"/>
-    <g transform="translate(60,60)">
-      <rect width="180" height="70" rx="16" fill="#111827" opacity="0.85"/>
-      <text x="90" y="32" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">User Space</text>
-      <text x="90" y="52" text-anchor="middle" fill="#9CA3AF" font-size="12">Processes · Libraries · Shells</text>
-    </g>
-    <g transform="translate(290,60)">
-      <rect width="180" height="70" rx="16" fill="#006699" opacity="0.9"/>
-      <text x="90" y="32" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">System Calls</text>
-      <text x="90" y="52" text-anchor="middle" fill="#D1D5DB" font-size="12">ABI · Glibc · VDSO</text>
-    </g>
-    <g transform="translate(520,60)">
-      <rect width="180" height="70" rx="16" fill="#FFD000" opacity="0.95"/>
-      <text x="90" y="32" text-anchor="middle" fill="#111827" font-size="18" font-weight="600">Kernel Space</text>
-      <text x="90" y="52" text-anchor="middle" fill="#374151" font-size="12">Scheduler · MM · VFS</text>
-    </g>
-    <path d="M240 95 H290" stroke="#111827" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <path d="M470 95 H520" stroke="#111827" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowHead)"/>
-    <g transform="translate(120,150)">
-      <rect width="520" height="50" rx="16" fill="#006699" opacity="0.16"/>
-      <text x="260" y="30" text-anchor="middle" fill="#1F2937" font-size="13">Drivers · Filesystems · Networking · Security · BPF · Architectures · Tooling</text>
-    </g>
-    <defs>
-      <marker id="arrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-        <path d="M0 0 L10 5 L0 10 z" fill="#111827"/>
-      </marker>
-    </defs>
-  </svg>
-</div>
+| Layer | Responsibilities | Highlights |
+| --- | --- | --- |
+| User space | Applications, shells, libraries | glibc, systemd, container runtimes |
+| System call interface | Stable ABI boundary | VDSO, seccomp, compatibility shims |
+| Kernel core | Scheduler, memory management, VFS | CFS, NUMA balancing, tmpfs |
+| Subsystems & drivers | Filesystems, networking, security, arch ports | BPF, io_uring, SELinux, arm64, riscv |
 
-## 🚀 Building from Source
+```
+User Processes
+   │  syscalls / ioctl / futex
+Kernel Services
+   │  drivers / filesystems / networking
+Hardware & Firmware
+```
+
+## Building from Source
 
 ```bash
 # Install tooling (Debian/Ubuntu example)
@@ -236,20 +73,20 @@ sudo make install
 
 > 💡 Tip: stash your `.config` in version control or use `git worktree` to juggle multiple builds.
 
-## ✅ Contributor Workflow
+## Contributor Workflow
 
-1. **Sync:** `git fetch origin && git rebase origin/master`
-2. **Develop:** work in topic branches; keep patches atomic.
+1. **Sync:** `git fetch origin && git rebase origin/master`.
+2. **Develop:** work in topic branches; keep patches atomic and logically ordered.
 3. **Self-review:**
    ```bash
    ./scripts/checkpatch.pl --strict path/to/patch.patch
    make -j"$(nproc)" W=1
    make clang-analyzer
    ```
-4. **Submit:** `git send-email` to the right subsystem mailing list + maintainers (see `MAINTAINERS`).
-5. **Follow up:** track review threads on lore.kernel.org and reply with v2/v3 as needed.
+4. **Submit:** send patches via `git send-email` to maintainers listed in `MAINTAINERS`.
+5. **Follow up:** track review threads on lore.kernel.org and iterate with v2/v3 revisions as required.
 
-## 🧭 Directory Cheat Sheet
+## Directory Cheat Sheet
 
 | Path | Highlights |
 | --- | --- |
@@ -258,112 +95,26 @@ sudo make install
 | `include/` | Kernel + UAPI headers (`uapi/` ⇒ user space ABI) |
 | `kernel/` | Scheduler, locking, timekeeping, cgroups |
 | `tools/` | `perf`, `bpftool`, `spi-tools`, testing harnesses |
-| `Documentation/` | Canonical manuals, guides, process docs |
+| `Documentation/` | Canonical manuals, style guides, workflows |
 
-## 🛡️ Testing Matrix
+## Testing Matrix
 
-- **KernelCI:** automated boot tests spanning architectures.
-- **syzbot (syzkaller):** continuous fuzzing of kernel interfaces.
-- **kselftest:** in-tree validation (`make kselftest`).
-- **LTP:** Linux Test Project for ABI and syscall conformance.
+- **KernelCI:** automated boot and smoke tests across diverse hardware.
+- **syzbot (syzkaller):** continuous syscall fuzzing with automated bug reports.
+- **kselftest:** in-tree validation suite (`make kselftest`).
+- **LTP:** Linux Test Project focusing on ABI and syscall conformance.
 
-## 🤝 Community Resources
+## Community Resources
 
-- **Docs:** [docs.kernel.org](https://docs.kernel.org/)
-- **Patchwork tracker:** [patchwork.kernel.org](https://patchwork.kernel.org/)
-- **Bugzilla:** [bugzilla.kernel.org](https://bugzilla.kernel.org/)
-- **Events:** Kernel Summit, Maintainers Summit, Linux Plumbers Conference.
+- [docs.kernel.org](https://docs.kernel.org/)
+- [patchwork.kernel.org](https://patchwork.kernel.org/)
+- [bugzilla.kernel.org](https://bugzilla.kernel.org/)
+- Kernel Summit · Maintainers Summit · Linux Plumbers Conference
 
-## 📜 Philosophy
+## Philosophy
 
-<div align="center">
-  <svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="quoteTitle quoteAuthor">
-    <defs>
-      <linearGradient id="quoteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#FFD000"/>
-        <stop offset="100%" stop-color="#00A676"/>
-      </linearGradient>
-    </defs>
-    <rect x="20" y="20" width="480" height="100" rx="24" fill="#111827" opacity="0.92"/>
-    <rect x="36" y="36" width="448" height="68" rx="18" fill="url(#quoteGradient)" opacity="0.12"/>
-    <text id="quoteTitle" x="260" y="70" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">“Talk is cheap. Show me the code.”</text>
-    <text id="quoteAuthor" x="260" y="96" text-anchor="middle" fill="#FFD000" font-size="14">— Linus Torvalds</text>
-  </svg>
-</div>
+> “Talk is cheap. Show me the code.” — Linus Torvalds
 
 ---
 
 Linux is the collective expression of open collaboration operating at planetary scale. Whether you write drivers, tune schedulers, or study the evolving ABI, welcome to the kernel community.
-+cd linux
-+
-+# Configure
-+make menuconfig  # or oldconfig/xconfig/nconfig
-+
-+# Build using every available core
-+make -j"$(nproc)"
-+
-+# Install modules + kernel
-+sudo make modules_install
-+sudo make install
-+```
-+
-+> 💡 Tip: stash your `.config` in version control or use `git worktree` to juggle multiple builds.
-+
-+## ✅ Contributor Workflow
-+
-+1. **Sync:** `git fetch origin && git rebase origin/master`
-+2. **Develop:** work in topic branches; keep patches atomic.
-+3. **Self-review:**
-+   ```bash
-+   ./scripts/checkpatch.pl --strict path/to/patch.patch
-+   make -j"$(nproc)" W=1
-+   make clang-analyzer
-+   ```
-+4. **Submit:** `git send-email` to the right subsystem mailing list + maintainers (see `MAINTAINERS`).
-+5. **Follow up:** track review threads on lore.kernel.org and reply with v2/v3 as needed.
-+
-+## 🧭 Directory Cheat Sheet
-+
-+| Path | Highlights |
-+| --- | --- |
-+| `arch/` | Architecture ports (x86, arm64, riscv, …) |
-+| `drivers/` | Device drivers grouped by subsystem |
-+| `include/` | Kernel + UAPI headers (`uapi/` ⇒ user space ABI) |
-+| `kernel/` | Scheduler, locking, timekeeping, cgroups |
-+| `tools/` | `perf`, `bpftool`, `spi-tools`, testing harnesses |
-+| `Documentation/` | Canonical manuals, guides, process docs |
-+
-+## 🛡️ Testing Matrix
-+
-+- **KernelCI:** automated boot tests spanning architectures.
-+- **syzbot (syzkaller):** continuous fuzzing of kernel interfaces.
-+- **kselftest:** in-tree validation (`make kselftest`).
-+- **LTP:** Linux Test Project for ABI and syscall conformance.
-+
-+## 🤝 Community Resources
-+
-+- **Docs:** [docs.kernel.org](https://docs.kernel.org/)
-+- **Patchwork tracker:** [patchwork.kernel.org](https://patchwork.kernel.org/)
-+- **Bugzilla:** [bugzilla.kernel.org](https://bugzilla.kernel.org/)
-+- **Events:** Kernel Summit, Maintainers Summit, Linux Plumbers Conference.
-+
-+## 📜 Philosophy
-+
-+<div align="center">
-+  <svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="quoteTitle quoteAuthor">
-+    <defs>
-+      <linearGradient id="quoteGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-+        <stop offset="0%" stop-color="#FFD000"/>
-+        <stop offset="100%" stop-color="#00A676"/>
-+      </linearGradient>
-+    </defs>
-+    <rect x="20" y="20" width="480" height="100" rx="24" fill="#111827" opacity="0.92"/>
-+    <rect x="36" y="36" width="448" height="68" rx="18" fill="url(#quoteGradient)" opacity="0.12"/>
-+    <text id="quoteTitle" x="260" y="70" text-anchor="middle" fill="#F9FAFB" font-size="18" font-weight="600">“Talk is cheap. Show me the code.”</text>
-+    <text id="quoteAuthor" x="260" y="96" text-anchor="middle" fill="#FFD000" font-size="14">— Linus Torvalds</text>
-+  </svg>
-+</div>
-+
-+---
-+
-+Linux is the collective expression of open collaboration operating at planetary scale. Whether you write drivers, tune schedulers, or study the evolving ABI, welcome to the kernel community.
