@@ -1,6 +1,6 @@
-# Linux Kernel: Engineering the Core of Computing
+#Linux Kernel: Engineering the Core of Computing
 
-> Fast, secure, collaborative engineering since 1991.
+>Fast, secure, collaborative engineering since 1991.
 
 ```
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -49,7 +49,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠈⠉⣉⢉⣉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ```
 
-## Table of Contents
+##Table of Contents
 
 - [Key Links](#key-links)
 - [Overview](#overview)
@@ -94,7 +94,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀
-## Key Links
+##Key Links
 
 | Resource | Link | Notes |
 | --- | --- | --- |
@@ -120,7 +120,7 @@
 ⡰⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢆
 
 
-## Overview
+##Overview
 
 Linux powers everything from smartphones and IoT nodes to hyperscale clusters and the world’s fastest supercomputers. The mainline kernel evolves on a transparent cadence while preserving multi-decade ABI stability.
 
@@ -128,7 +128,7 @@ Linux powers everything from smartphones and IoT nodes to hyperscale clusters an
 - **Release cadence:** Major releases every 8–10 weeks; stable updates weekly.
 - **Governance:** Review-driven patch series coordinated by subsystem maintainers via mailing lists.
 
-## Kernel Architecture
+##Kernel Architecture
 
 | Layer | Responsibilities | Highlights |
 | --- | --- | --- |
@@ -145,31 +145,31 @@ Kernel Services
 Hardware & Firmware
 ```
 
-## Building from Source
+##Building from Source
 
 ```bash
 # Install tooling (Debian/Ubuntu example)
 sudo apt update
 sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev dwarves bc
 
-# Clone the canonical tree
+#Clone the canonical tree
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 cd linux
 
-# Configure
+#Configure
 make menuconfig  # or oldconfig/xconfig/nconfig
 
-# Build using every available core
+#Build using every available core
 make -j"$(nproc)"
 
-# Install modules + kernel
+#Install modules + kernel
 sudo make modules_install
 sudo make install
 ```
 
 > 💡 Tip: stash your `.config` in version control or use `git worktree` to juggle multiple builds.
 
-## Contributor Workflow
+##Contributor Workflow
 
 1. **Sync:** `git fetch origin && git rebase origin/master`.
 2. **Develop:** work in topic branches; keep patches atomic and logically ordered.
@@ -182,7 +182,7 @@ sudo make install
 4. **Submit:** send patches via `git send-email` to maintainers listed in `MAINTAINERS`.
 5. **Follow up:** track review threads on lore.kernel.org and iterate with v2/v3 revisions as required.
 
-## Directory Cheat Sheet
+##Directory Cheat Sheet
 
 | Path | Highlights |
 | --- | --- |
@@ -193,23 +193,23 @@ sudo make install
 | `tools/` | `perf`, `bpftool`, `spi-tools`, testing harnesses |
 | `Documentation/` | Canonical manuals, style guides, workflows |
 
-## Testing Matrix
+##Testing Matrix
 
 - **KernelCI:** automated boot and smoke tests across diverse hardware.
 - **syzbot (syzkaller):** continuous syscall fuzzing with automated bug reports.
 - **kselftest:** in-tree validation suite (`make kselftest`).
 - **LTP:** Linux Test Project focusing on ABI and syscall conformance.
 
-## Community Resources
+##Community Resources
 
 - [docs.kernel.org](https://docs.kernel.org/)
 - [patchwork.kernel.org](https://patchwork.kernel.org/)
 - [bugzilla.kernel.org](https://bugzilla.kernel.org/)
 - Kernel Summit · Maintainers Summit · Linux Plumbers Conference
 
-## Philosophy
+##Philosophy
 
-> “Talk is cheap. Show me the code.” — Linus Torvalds
+>“Talk is cheap. Show me the code.” — Linus Torvalds
 
 ---
 
